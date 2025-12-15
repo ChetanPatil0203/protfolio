@@ -1,0 +1,307 @@
+/* =======================================
+   Universal Styles & Variables
+======================================= */
+:root {
+  --primary-color: #007bff;
+  --secondary-color: #6c757d;
+  --background-dark: #1e1e1e;
+  --background-light: #2d2d2d;
+  --text-light: #f8f9fa;
+  --font-family: 'Poppins', sans-serif;
+  --border-radius: 8px;
+}
+
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--background-dark);
+  color: var(--text-light);
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: var(--primary-color);
+}
+
+ul {
+  list-style: none;
+}
+
+/* =======================================
+   Section Common (⚠️ NO FLEX HERE)
+======================================= */
+section {
+  padding: 80px 5%;
+  min-height: 100vh;
+}
+
+/* =======================================
+   Navbar
+======================================= */
+.navbar {
+  position: sticky;
+  top: 0;
+  background: var(--background-dark);
+  padding: 15px 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--background-light);
+  z-index: 1000;
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: 800;
+}
+
+.nav-links {
+  display: flex;
+  gap: 30px;
+}
+
+.nav-links a {
+  color: var(--text-light);
+  position: relative;
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background: var(--primary-color);
+  bottom: -5px;
+  left: 0;
+  transition: 0.3s;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+.resume-btn {
+  background: var(--primary-color);
+  color: #000 !important;
+  padding: 8px 15px;
+  border-radius: var(--border-radius);
+  font-weight: 600;
+}
+
+/* =======================================
+   Home Section (IMAGE RIGHT FIXED)
+======================================= */
+.home {
+  min-height: 100vh;
+  padding-top: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+}
+
+/* LEFT TEXT */
+.home-left {
+  flex: 1;
+  max-width: 600px;
+}
+
+.home-left h1 {
+  font-size: 3.5rem;
+}
+
+.home-left h1 span {
+  color: var(--primary-color);
+}
+
+.home-left h2 {
+  font-size: 2rem;
+  color: var(--secondary-color);
+  margin: 15px 0;
+}
+
+.home-left p {
+  color: var(--secondary-color);
+  margin-bottom: 30px;
+}
+
+.home-buttons {
+  display: flex;
+  gap: 20px;
+}
+
+/* Buttons */
+.btn {
+  padding: 12px 25px;
+  background: var(--primary-color);
+  color: #000;
+  border-radius: var(--border-radius);
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  background: #0056b3;
+}
+
+.btn-outline {
+  padding: 12px 25px;
+  border: 2px solid var(--primary-color);
+  color: var(--primary-color);
+  border-radius: var(--border-radius);
+  transition: 0.3s;
+}
+
+.btn-outline:hover {
+  background: var(--primary-color);
+  color: #000;
+}
+
+/* RIGHT IMAGE */
+.home-right {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end; /* 👈 IMAGE RIGHT */
+  align-items: center;
+}
+
+.profile-img {
+  width: 340px;
+  height: 340px;
+  object-fit: cover;
+  object-position: top center;
+  border-radius: 50%;
+  border: 6px solid rgba(0, 123, 255, 0.6);
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.5),
+    0 0 25px rgba(0, 123, 255, 0.4);
+  transition: 0.4s;
+}
+
+.profile-img:hover {
+  transform: scale(1.05);
+}
+
+/* =======================================
+   About
+======================================= */
+.about {
+  background: var(--background-light);
+  text-align: center;
+}
+
+.about-text {
+  max-width: 800px;
+  margin: auto;
+}
+
+/* =======================================
+   Skills
+======================================= */
+.skill-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.skill-box {
+  background: var(--background-light);
+  padding: 30px;
+  border-radius: var(--border-radius);
+  border-top: 4px solid var(--primary-color);
+  transition: 0.3s;
+}
+
+.skill-box:hover {
+  transform: translateY(-10px);
+}
+
+/* =======================================
+   Contact
+======================================= */
+.contact {
+  text-align: center;
+}
+
+.contact-box {
+  background: var(--background-light);
+  padding: 40px;
+  max-width: 500px;
+  margin: auto;
+  border-radius: var(--border-radius);
+}
+
+.contact-box p {
+  margin-bottom: 15px;
+}
+
+.contact-box .btn {
+  margin-top: 30px;
+  display: inline-block;
+}
+
+/* =======================================
+   Responsive
+======================================= */
+@media (max-width: 992px) {
+  .home {
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+
+  .home-right {
+    justify-content: center;
+  }
+
+  .home-buttons {
+    justify-content: center;
+  }
+
+  .profile-img {
+    width: 280px;
+    height: 280px;
+    margin-bottom: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+
+  .home-buttons {
+    flex-direction: column;
+  }
+
+  .btn,
+  .btn-outline {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .profile-img {
+    width: 240px;
+    height: 240px;
+  }
+
+  .home-left h1 {
+    font-size: 2.5rem;
+  }
+}
