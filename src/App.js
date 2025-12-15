@@ -4,7 +4,7 @@ import Home from './Component/Home';
 import About from './Component/About';
 import Skill from './Component/Skill';
 import Contact from './Component/Contact';
-import MyFunction from './Component/Index';
+
 
 function App() {
   return (
@@ -14,7 +14,7 @@ function App() {
       <About />
       <Skill />
       <Contact />
-      <MyFunction />
+      
     </>
   );
 }
